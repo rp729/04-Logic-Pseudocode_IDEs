@@ -1,5 +1,6 @@
 # Checkpoint
 1.1 What is a program?
+Modified
 
 1.2 What is hardware?
 
