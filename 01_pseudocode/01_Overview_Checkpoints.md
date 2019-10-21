@@ -3,6 +3,7 @@
 Modified
 
 1.2 What is hardware?
+Modified 2
 
 1.3 List the five major components of a computer system.
 
