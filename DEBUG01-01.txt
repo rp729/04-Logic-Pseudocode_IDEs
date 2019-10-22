@@ -1,0 +1,20 @@
+// This pseudocode is intended to describe
+
+// computing the price of an item on sale for 10% off
+
+
+start
+   
+    input origPrice
+   
+    discount = origPrice * 0.25
+   
+    finalPrice = origPrice - discount
+   
+    output finalPrice
+
+stop
+
+
+//wrong variable name (origPrice) on line 2
+//discount mispelled on line 3
