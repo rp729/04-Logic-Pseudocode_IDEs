@@ -1,0 +1,11 @@
+1) Variables chouldn't begin with a number and single quote on final line before the variable 1stPrize
+
+2) Mispelled variable names when setting average. Should reflect lowest and highest variables.
+
+3) Variable length type should be declared prior to establishing a value. 
+
+4) Sum value should be established after value1, value2, and value3.
+
+5) pi should be on the left of the = sign and 3.14159265 should be on the right of the = sign
+
+6) GRAVITY should not be set as a constant on the first line since the value changes later in the code. 
