@@ -11,6 +11,39 @@ Design a program that prompts the user to enter a number within the range of 1 t
 
 The area of a rectangle is the rectangle’s length times its width. Design a program that asks for the length and width of two rectangles. The program should tell the user which rectangle has the greater area, or whether the areas are the same.
 
+```
+//Start of main function
+Declare integer width, length, rectangle1, rectangle2
+
+//Calculate area of Rectangle 1
+rectangleArea1()
+    Display "Enter length of rectangle 1."
+    input length
+    Display "Enter width of rectangle 1."
+    input width
+    set rectangle1 = length * width
+Return
+
+//Calculate area of Rectangle 2
+rectangleArea2()
+    Display "Enter length of rectangle 2."
+    input length
+    Display "Enter width of rectangle 2."
+    input width
+    set rectangle2 = length * width
+Return
+
+//Calculate larger rectanglelargerRectangle()
+    if rectangle 1 > rectangle 2 then
+        Output "Rectangle 1 has a greater area than rectangle 2"
+    else if rectangle2 > rectangle 1 then
+        Output "Rectangle 2 has a greater area than rectangle 1"
+    else
+        Output "Both rectangles have the same area."
+    end if
+Return
+```
+
 # Mass and Weight
 
 Scientists measure an object’s mass in kilograms and its weight in Newtons. If you know the amount of mass of an object, you can calculate its weight, in Newtons, with the following formula:
@@ -19,6 +52,26 @@ Scientists measure an object’s mass in kilograms and its weight in Newtons. If
 
 Design a program that asks the user to enter an object’s mass, and then calculates its weight. If the object weighs more than 1,000 Newtons, display a message indicating that it is too heavy. If the object weighs less than 10 Newtons, display a message indicating that it is too light.
 
+```
+//Variable declarations
+Declare Real mass, weight
+Constant Real MASS_TO_WEIGHT = 9.8
+
+//Mass to weight module
+massToWeight()
+    Display "Enter the mass of the object in Newtons".
+    input mass
+    if mass > 1000 then
+        Display "Mass is too heavy!"
+    else if mass < 10 then
+        Display "Mass is too light!"
+    else
+        set weight = mass * MASS_TO_WEIGHT
+        output "The weight of the mass you entered is ", weight 
+    end if
+Return
+```
+
 # Magic Dates
 
 The date June 10, 1960, is special because when it is written in the following format, the month times the day equals the year:
@@ -26,6 +79,50 @@ The date June 10, 1960, is special because when it is written in the following f
 ![image](https://user-images.githubusercontent.com/47218880/67404336-d92d0e00-f578-11e9-9801-6742f67d71fe.png)
 
 Design a program that asks the user to enter a month (in numeric form), a day, and a two-digit year. The program should then determine whether the month times the day equals the year. If so, it should display a message saying the date is magic. Otherwise, it should display a message saying the date is not magic.
+
+```
+//Start of program
+Declare string primaryColor1, primaryColor2
+
+//User input module
+userInput()
+    Display "Enter a primary color."
+    input primaryColor1
+    Display "Enter another primary color."
+    input primaryColor2
+Return
+
+Color mix module
+colorMix()
+    //Purple mix
+    if primaryColor1 == "red" and primaryColor2 == "blue" then
+        Display "When you mix red and blue, you get purple."
+    else if primaryColor1 == "blue" and primaryColor2 == "red" then
+        Display "When you mix red and blue, you get purple."
+
+    //Orange mix
+    else if primaryColor1 == "red" and primaryColor2 == "yellow" then
+        Display "When you mix red and yellow, you get orange."
+    else if primaryColor1 == "yellow" and primaryColor2 == "red" then
+        Display "When you mix red and yellow, you get orange."
+
+    //Green mix
+    else if primaryColor1 == "blue" and primaryColor2 == "yellow" then
+        Display "When you mix blue and yellow, you get green."
+    else if primaryColor1 == "yellow" and primaryColor2 == "blue" then
+        Display "When you mix blue and yellow, you get green."
+
+    //No mix
+    else if primaryColor1 == primaryColor2 then
+        Display "There is no mix since both colors are ", primaryColor1
+    
+    //Error Message
+    else
+        Diplay "ERROR, you must enter a primary color (red, yellow, or blue)"
+    end if
+Return
+
+```
 
 # Color Mixer
 

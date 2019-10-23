@@ -6,12 +6,11 @@ Design a modular program that asks the user to enter a distance in kilometers, a
 ![image](https://user-images.githubusercontent.com/47218880/67329523-99b2e300-f4e0-11e9-8a30-3f31fbd76ae1.png)
 
 ```
-Start //Module main
-    //Declaration
-    Declare Real kilometers
-    Declare Real miles
-    Constant MILES_TO_KILO = 0.6214
-Stop
+//Module main
+//Declaration
+Declare Real kilometers, miles
+Constant MILES_TO_KILOS = 0.6214
+MilestoKilo()
 
 MilesToKilo()
     Display "Enter number of kilometers."
@@ -24,25 +23,28 @@ return
 
 See program below,  the Sales Tax program. This program calculates and displays the county and state sales tax on a purchase. Refactor it so the subtasks are in modules.
 ```
-Start //Module main
-    // Variable declarations
-    Declare Real purchase, stateTax, countyTax, totalTax, totalSale
-    // Constants for the state and county tax rates
-    Constant Real STATE_TAX_RATE = 0.04
-    Constant Real COUNTY_TAX_RATE = 0.02
-Stop
+//Module start
+// Variable declarations
+Declare Real purchase, stateTax, countyTax, totalTax, totalSale
+// Constants for the state and county tax rates
+Constant Real STATE_TAX_RATE = 0.04
+Constant Real COUNTY_TAX_RATE = 0.02
 
 // Get the amount of the purchase.
 AmountOfPurchase()
     Display "Enter the amount of the purchase."
     Input purchase
+Return
 
 // Calculate the state sales tax.
 SalesTaxCalc()
     Set stateTax = purchase * STATE_TAX_RATE
+Return
 
 // Calculate the county sales tax.
-Set countyTax = purchase * COUNTY_TAX_RATE
+countyTax()
+    Set countyTax = purchase * COUNTY_TAX_RATE
+Return
 
 // Calculate the total tax.
 TotalTaxCalc()
@@ -51,6 +53,7 @@ TotalTaxCalc()
 // Calculate the total of the sale.
 TotalSale()
     Set totalSale = purchase + totalTax
+Return
 
 // Display information about the sale.
 DataDisplay()
@@ -59,6 +62,7 @@ DataDisplay()
     Display "County Tax: ", countyTax
     Display "Total Tax: ", totalTax
     Display "Sale total: ", totalSale
+Return
 ```
  
 
@@ -69,12 +73,10 @@ DataDisplay()
 Many financial experts advise that property owners should insure their homes or buildings for at least 80 percent of the amount it would cost to replace the structure. Design a modular program that asks the user to enter the replacement cost of a building and then displays the minimum amount of insurance he or she should buy for the property.
 
 ```
-Start //Module Main
-    Declare Real propertyValue
-    Declare Real insuranceAmount
-    Constant Real INSURANCE_PERCENT = 0.8
-Stop
+//Module Main
+Declare Real propertyValue, insuranceAmount
 
+//Insurance amount calculator
 MinInsuranceAmount()
     Display "Enter your property value."
     input propertyValue
@@ -88,10 +90,10 @@ Return
 Design a modular program that asks the user to enter the monthly costs for the following expenses incurred from operating his or her automobile: loan payment, insurance, gas, oil, tires, and maintenance. The program should then display the total monthly cost of these expenses, and the total annual cost of these expenses.
 
 ```
-Start //Module main
-    Declare Real loanPayment, insurance, gas, oil, tires, maintenance, monthlyCost, annualCost
-Stop
+//Declarations
+ Declare Real loanPayment, insurance, gas, oil, tires, maintenance, monthlyCost, annualCost
 
+//User input
 userInput()
     //Retrieve user data
     Display "Enter your loan payment amount."
