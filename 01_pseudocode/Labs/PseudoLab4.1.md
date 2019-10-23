@@ -92,7 +92,8 @@ Start //Module main
     Declare Real loanPayment, insurance, gas, oil, tires, maintenance, monthlyCost, annualCost
 Stop
 
-totalExpenses()
+userInput()
+    //Retrieve user data
     Display "Enter your loan payment amount."
     input loanPayment
     Display "Enter your insurance amount."
@@ -105,8 +106,21 @@ totalExpenses()
     input tire
     Display "Enter monthly amount for general maintenance."
     input maintenance
-    monthlyCost = loanPayment+insurance+
-    output "Your monthly expensis is equal to ",
+return
+
+//Calculate monthly cost
+monthlyCostCalc()
+    monthlyCost = loanPayment+insurance+gas+oil+tire+maintenance
+Return
+
+//Calculate annual cost
+annualCostCalc()
+    annualCost = monthlyCost * 12
+Return
+
+//Final Result
+finalResult()
+    output "Your monthly expensis is equal to ", monthlyCost, " and your annual expense is equal to ", annualCost
 Return
 ```
 
