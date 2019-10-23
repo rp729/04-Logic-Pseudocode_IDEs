@@ -303,6 +303,33 @@ For each of the following Boolean expressions, decide whether the statement is t
 
 * Design a flowchart or pseudocode for a program that accepts three numbers from a user and displays a message if the sum of any two numbers equals the third. 
 
+```
+start
+  Declaration
+      num firstNum
+      num secondNum
+      num thirdNum
+      string MSG = "Got it!"
+    GetNum()
+    Calc()
+    finish()
+  stop
+
+  GetNum()
+    Display "Enter three numbers"
+    Input firstNum, secondNum, thirdNum
+  return
+
+  Calc()
+    if  ((firstNum + secondNum)= thirdNum) or
+        ((secondNum + thirdNum)= firstNum) or
+        ((firstNum + thirdNum) = secondNum)
+        output MSG
+    endif
+return
+
+```
+
 * ShoppingBay is an online auction service that requires several reports. Data for each auctioned item includes an ID number, item description, length of auction in days, and minimum required bid. Design a flowchart or pseudocode for the following: 
 
   * A program that accepts data for one auctioned item. Display data for an auction only if the minimum required bid is more than $250.00. 
@@ -310,6 +337,126 @@ For each of the following Boolean expressions, decide whether the statement is t
   * A program that continuously accepts auction item data and displays data for every auction in which there are no bids yet (in other words, the minimum bid is $0.00) and the length of the auction is seven days or less. 
   * A program that continuously accepts auction data and displays data for every auction in which the length is between 14 and 28 days inclusive. 
   * A program that prompts the user for a maximum required bid, and then continuously accepts auction data and displays data for every auction in which the minimum bid is less than or equal to the amount entered by the user.
+
+```
+Number 1: 
+
+class shoppingBay():
+start
+  Declaration
+      num IDNumber
+      string itemDescription
+      num lengthOfAuctionDays
+      num MinBid
+    getID()
+    getItem()
+    getDays()
+    getBid()
+  stop
+
+  getID()
+    Display "Enter ID Number"
+    Input IDNumber
+  return
+
+  getItem()
+    Display "Enter item description"
+    Input itemDescription
+  return
+
+  getDays()
+    Display "Enter number of auction days."
+    Input lengthOfAuctionDays
+  return
+
+  getBid()
+    Display "Enter minimum bid."
+    Input MinBid
+  return
+
+  end class
+
+  AuctionItem()
+  if minBid <= 250 then
+    continue
+  else
+    ouput IDNumber, itemDescription, lengthOfAuctionDays, MinBid
+  end if
+return
+
+
+
+Number 2: 
+from shoppingBay import *
+
+while True
+  getID()
+  getItem()
+  getDays()
+  getBid()
+  if minBid < 300 then
+    Display "Minimum value is $300... BYE!"
+    break
+  else
+    ouput IDNumber, itemDescription, lengthOfAuctionDays, MinBid
+  end if
+
+Number 3: 
+from shoppingBay import *
+
+while True
+  getID()
+  getItem()
+  getDays()
+  getBid()
+  if lengthOfAuction > 7 then
+    Display "Auction days must be less than 7 days"
+    continue
+  else if MinBid > 0 then
+    Display "minimum bid is greater than $0"
+    continue
+  else
+    ouput IDNumber, itemDescription, lengthOfAuctionDays, MinBid
+  end if
+
+
+Number 4: 
+from shoppingBay import *
+
+while True
+  getID()
+  getItem()
+  getDays()
+  getBid()
+  if lengthOfAuction >= 14 and <= 28 then
+    ouput IDNumber, itemDescription, lengthOfAuctionDays, MinBid
+  else
+    continue
+  end if
+
+
+
+Number 5: 
+from shoppingBay import *
+
+getMaxBid()
+    Display "Enter maximum bid."
+    Input MaxBid
+  return
+
+while True
+  getID()
+  getItem()
+  getDays()
+  getBid()
+  getMaxBid()
+
+  if MinBid <= MaxBid then
+    ouput IDNumber, itemDescription, lengthOfAuctionDays, MinBid
+  else
+    continue
+  end if
+```
 
 * The Drive-Rite Insurance Company provides automobile insurance policies for drivers. Design a flowchart or pseudocode for the following: 
   * A program that accepts insurance policy data, including a policy number, customer last name, customer first name, age, premium due date (month, day, and year), and number of driver accidents in the last three years. If an entered policy number is not between 1000 and 9999 inclusive, set the policy number to O. If the month is not between 1 and 12 inclusive, or the day is not correct for the month (for example, not between 1 and 31 for January or 1 and 29 for February), set the month, day, and year to 0. Display the policy data after any revisions have been made. 
