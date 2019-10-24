@@ -2,15 +2,70 @@
 
 ## Rectangle Area
 
+```
+Select 5
+```
+
 The area of a rectangle is calculated according to the following formula:
 
 ![image](https://user-images.githubusercontent.com/47218880/67446156-3e165180-f5d5-11e9-8673-1dab25034bff.png)
 
 Design a function that accepts a rectangle’s width and length as arguments and returns the rectangle’s area. Use the function in a program that prompts the user to enter the rectangle’s width and length, and then displays the rectangle’s area.
 
+```
+//Declaration
+Declare Real width, length, area
+
+//Main Function Entry Point
+Function Main()
+  return Call rectangleArea()
+End Function
+
+//Function to initialize varialbes via user input
+Function Real rectangleArea()
+  //Initialize width
+  Display "Enter rectangle width"
+  input width
+
+  //Initialize length
+  Display "Enter length"
+  input length
+
+  //Call on areaCalc to complete function
+  return Call areaCalc(width,length)
+End function
+
+//Function to calculate area
+Function Real areaCalc(width,length)
+  return width * length
+End Function
+```
+
 ## Feet to Inches
 
 One foot equals 12 inches. Design a function named feetToInches that accepts a number of feet as an argument, and returns the number of inches in that many feet. Use the function in a program that prompts the user to enter a number of feet and then displays the number of inches in that many feet.
+
+```
+Function Integer feetToInches(Integer feet)
+  Declare Integer inches = feet * 12
+  return inches
+End Function
+
+While true
+  Declare Integer feetInput
+  Declare String response
+  Display "Enter number of feet you would like to convert to inches"
+  input feetInput
+  Call feetToInches(feetInput)
+  Display "Would you like to run this program again? ('y' for yes)"
+  input response
+  If response == 'y' or response == 'Y' then
+    continue
+  else
+    break
+  End if
+End while
+```
 
 ## Math Quiz
 
@@ -19,11 +74,77 @@ Design a program that gives simple math quizzes. The program should display two 
   247
 + 129
 ```
+```
+import random
+
+//Main function to start program
+Function main()
+  return mathGenerator()
+End function
+
+Function mathGenerator()
+  //Function Declarations
+  Declare Integer num1
+  Declare Integer num2
+  Declare Integer sum
+  Declare Integer userAnswer
+  Declare Constant String NL = '\n'
+
+  //Function initialization
+  set num1 = random(1,999)
+  set num2 = random(1,999)
+  set sum = num1 + num2
+
+  //Function display with Python F String
+  Display F"  {num1}{NL}+ {num2}"
+
+  //User interaction
+  Display "What is the sum of the two numbers provided?"
+  input userAnswer
+  if userAnswer == sum then
+    return "Congrats!"
+  else
+    return "Incorrect" 
+
+End function
+  
+```
+
 The program should allow the student to enter the answer. If the answer is correct, a message of congratulations should be displayed. If the answer is incorrect, a message showing the correct answer should be displayed.
 
 ## Maximum of Two Values
 
 Design a function named max that accepts two integer values as arguments and returns the value that is the greater of the two. For example, if 7 and 12 are passed as arguments to the function, the function should return 12. Use the function in a program that prompts the user to enter two integer values. The program should display the value that is the greater of the two.
+
+```
+//Declarations
+Declare Real num1, num2, max
+
+//Main Function Entry Point
+Function Main()
+  return Function Real userInput()
+End Function
+
+//User interaction
+Function Real userInput()
+  Display "Enter the first number"
+  input num1
+  Display "Enter the second number"
+  input num2
+  return twoNumberMax(num1,num2)
+End Function
+
+//This function finds the larger of two numbers
+Function Real twoNumberMax(real number1, real number2)
+  If number1 > number2 then
+    return number1
+  Else if number2 > number1 then
+    return number2
+  Else
+    return number1
+  End if
+End Function
+```
 
 ## Falling Distance
 
@@ -35,8 +156,30 @@ The variables in the formula are as follows: d is the distance in meters, g is 9
 
 Design a function named fallingDistance that accepts an object’s falling time (in seconds) as an argument. The function should return the distance, in meters, that the object has fallen during that time interval. Design a program that calls the function in a loop that passes the values 1 through 10 as arguments and displays the return value.
 
-## Kinetic Energy
+```
+//For loop that will run 10 times
+For i in range(10)
+  Declare Integer x = 1
+  Display fallingDistance(x)
+  x += 1
+End for
 
+//Function that calculates falling distance
+Function Real fallingDistance(real time)
+  //Function declarations
+  Declare Constant Real ACCELERATION = 9.8
+  Declare Real distance
+
+  //Calculation
+  set distance = 0.5*ACCELERATION*time**2
+
+  //return value
+  return distance
+End Function
+```
+
+## Kinetic Energy
+d
 In physics, an object that is in motion is said to have kinetic energy. The following formula can be used to determine a moving object’s kinetic energy:
 
 ![image](https://user-images.githubusercontent.com/47218880/67446241-8fbedc00-f5d5-11e9-94c6-460160036f3f.png)
