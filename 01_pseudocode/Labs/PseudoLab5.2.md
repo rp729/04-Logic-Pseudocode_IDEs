@@ -4,19 +4,95 @@
 
 A bug collector collects bugs every day for seven days. Design a program that keeps a running total of the number of bugs collected during the seven days. The loop should ask for the number of bugs collected for each day, and when the loop is finished, the program should display the total number of bugs collected.
 
+```
+Declare Integer day = 1
+Declare Integer bugCount = 0
+Declare Integer bugVar
 
+//Display message to input numbers for each day
+for bugs in range(7):
+    //Days 1-7
+    Display "How many bugs did you catch on day ",day,"?"
+    input bugVar
+    bugCount += bugVar
+    day += 1
+End for
+
+//Display total count of bugs. 
+Diplay "The total number of bugs you caught this week is ", bugVar
+```
 
 # Calories Burned
 
 Running on a particular treadmill you burn 3.9 calories per minute. Design a program that uses a loop to display the number of calories burned after 10, 15, 20, 25, and 30 minutes.
 
+```
+Declare Constant Real CAL_PER_MIN = 3.9
+Declare Integer TimeOnTreadmill = 5
+
+//While loop displays calories burned
+While TimeOnTreadmill <= 30
+    //Calories burned at 10, 15, 20, 25, and 30 minutes
+    TimeOnTreadmill += 5
+    Diplay "At ", TimeOnTreadmill, " minutes you burned ", (TimeOnTreadmill*CAL_PER_MIN), "calories!"
+End while
+```
+
 # Budget Analysis
 
 Design a program that asks the user to enter the amount that he or she has budgeted for a month. A loop should then prompt the user to enter each of his or her expenses for the month, and keep a running total. When the loop finishes, the program should display the amount that the user is over or under budget.
 
+```
+//Declarations
+Declare Real budget, moneySpent
+Declare string spendMore == "y"
+
+//Find the monthly budget
+Display "What is your monthly budget?"
+Input budget
+
+//While loop to find if money spent is greater or less than budget
+While spendMore == "y" or spendMore == "Y"
+    Display "Enter the amount spent on an item."
+    input moneySpent
+    budget -= moneySpent
+
+    //Ask the user if they have more items to add
+    Display "Do you have more items to add? ('y' to continue)"
+End while
+
+//Display remaining budget
+If budget > 0 then
+    Display "You have ",budget," dollars left in you budget!"
+Else if budget < 0 then
+    Display "You spent ",budget*-1," dolloars OVER your budget!!!"
+Else
+    Display "WOW! You spent your exact budget for the month. Nice work!"
+End if
+```
+
 # Sum of Numbers
 
 Design a program with a loop that asks the user to enter a series of positive numbers. The user should enter a negative number to signal the end of the series. After all the positive numbers have been entered, the program should display their sum.
+
+```
+//Declarations
+Declare Real sum = 0.0
+Declare Real num
+
+//Ask user to input number
+While true
+    Display "Enter a positive number"
+    input num
+    if num >= 0 then
+        sum += num
+    else
+        break
+End while
+
+//Tell the user they entered a negative number
+Diplay "You entered a negative number... BUTT your sum is equal to ",sum
+```
 
 # Tuition Increase
 
