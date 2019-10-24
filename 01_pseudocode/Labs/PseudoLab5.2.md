@@ -31,7 +31,7 @@ Declare Constant Real CAL_PER_MIN = 3.9
 Declare Integer TimeOnTreadmill = 5
 
 //While loop displays calories burned
-While TimeOnTreadmill <= 30
+While TimeOnTreadmill < 30
     //Calories burned at 10, 15, 20, 25, and 30 minutes
     TimeOnTreadmill += 5
     Diplay "At ", TimeOnTreadmill, " minutes you burned ", (TimeOnTreadmill*CAL_PER_MIN), "calories!"
