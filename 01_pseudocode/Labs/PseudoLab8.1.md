@@ -193,8 +193,6 @@ Call showWinner(computer, player)
 End Module
 
 
-
-
 // The getNumber module gets an integer
 Module getNumber(Integer Ref inputAnswer)
 		Display “Enter 1 for rock, 2 for paper, 3 for scissors:  “
@@ -202,8 +200,6 @@ Module getNumber(Integer Ref inputAnswer)
 		Call inputValidation(inputAnswer)
 		return inputAnswer
 End Module
-
-
 
 
 // The showWinner module shows if number is a prime
@@ -290,8 +286,6 @@ End If
 	Return 0
 
 End Function
-
-
 
 
 //User Input Validation
