@@ -4,13 +4,94 @@
 
 Design a program that asks the user to enter a store’s sales for each day of the week. The amounts should be stored in an array. Use a loop to calculate the total sales for the week and display the result.
 
+```
+//Declarations
+Constant Int SIZE = 7
+Declare Integer sales[SIZE]
+Declare Integer num, total
+
+For index = 0 to SIZE -1
+    Display "Enter sales for Day "index + 1
+    input sales[index]
+End for
+
+//Calculate total
+For each num in sales
+    set total = total + num
+End for
+
+//Display total
+Display total
+```
+
 ## Lottery Number Generator
 
 Design a program that generates a 7-digit lottery number. The program should have an Integer array with 7 elements. Write a loop that steps through the array, randomly generating a number in the range of 0 through 9 for each element. Then write another loop that displays the contents of the array.
 
+```
+//Import module random
+import random
+
+//Declarations
+Constant Int SIZE = 7
+Declare Integer lottery[SIZE]
+Declare Integer num
+
+//Assign values to each element in lottery
+for index = 0 to SIZE -1
+    set lottery[index] = random(0,9)
+End for
+
+//Display values of each element in lottery
+for each num in lottery
+    Display num
+End for
+```
+
 ## Rainfall Statistics
 
 Design a program that lets the user enter the total rainfall for each of 12 months into an array. The program should calculate and display the total rainfall for the year, the average monthly rainfall, and the months with the highest and lowest amounts.
+
+```
+//Declarations
+Constant Integer SIZE = 12
+Declare Real rainFall[SIZE]
+Declare Real totalYear, max, num
+
+//Prompt user for input for each month
+For index = 0 to SIZE -1
+    Display "Enter rain fall for month ",index + 1
+    input rainFall[index]
+End for
+
+//Calculate total rain fall
+For each num in rainFall
+    totalYear = totalYear + num
+End for
+
+//Calculate max rain fall month
+For each num in rainFall
+    if num > max
+        set max = num
+    else
+        continue
+End for
+
+//Calculate min rain fall month
+Declare Real min = max
+For each num in rainFall
+    if num < min
+        set min = num
+    else
+        continue
+End for
+
+//Display Calculations
+Display "Rain for the year is ", totalYear
+Display "The average moth rain fall was ", totalYear/12
+Display "The highest rainfall for the yar was ", max
+Display "The lowest rainfall for the year was ", min
+```
 
 ## Number Analysis Program
 
@@ -24,6 +105,28 @@ The total of the numbers in the array
 
 The average of the numbers in the array
 ```
+```
+//Declarations
+Constant Integer USER_INPUT = 20
+Declare real numArray[USER_INPUT], totalNum
+Declare integer num
+
+//Prompt user for input
+For index = 0 to USER_INPUT -1
+    Display "Enter number"
+    input numArray[index]
+End for
+
+//Calculate total
+For each num in numArray
+    Set totalNum = totalNum + num
+End for
+
+Display "The lowest number in the array is " min(numArray)
+Display "The highest number in the array is " max(numArray)
+Display "The total of the numbers in the array is " totalNum
+Display "The average of the numbers in the array is " totalNum/20
+```
 
 ## Charge Account Validation
 
@@ -32,6 +135,28 @@ Design a program that asks the user to enter a charge account number. The progra
 5658845  4520125  7895122  8777541  8451277  1302850
 8080152  4562555  5552012  5050552  7825877  1250255
 1005231  6545231  3852085  7576651  7881200  4581002
+```
+```
+//Declarations
+Constant Integer SIZE = 18
+Declare Integer account
+Declare Integer chargeAccount[SIZE] = 5658845,  4520125,  7895122,  8777541,  8451277,  1302850, 8080152,  4562555,  5552012,  5050552,  7825877,  1250255, 1005231,  6545231,  3852085,  7576651,  7881200,  4581002
+
+//Prompt user for account number
+Display "Enter Account Number"
+input account
+
+//Verify if the account entered is valid
+Call accountValidation(account)
+
+//User function for account validation
+Function accountValidation(Integer account)
+    if account in chargeAccount
+        return "Valid account number"
+    Else
+        return "Invalid account number"
+    End for
+End function
 ```
 These numbers should be stored in an array. Use the sequential search algorithm to locate the number entered by the user. If the number is in the array, the program should display a message indicating the number is valid. If the number is not in the array, the program should display a message indicating the number is invalid.
 
