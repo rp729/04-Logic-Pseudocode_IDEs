@@ -2,11 +2,92 @@
 
 Design an algorithm that prompts the user to enter a positive nonzero number and validates the input.
 
+```
+//Declaration
+Declare Real nonZero
+
+//Prompt User to Enter Number
+Display "Enter a positive nonzero number"
+input nonZero
+
+//Call on function for input validation
+Call inputValidation(nonZero)
+
+//Input validation function
+Function String inputValidation(Real userInput)
+   if userInput > 0 then
+      Return 
+   Else
+      While userInput <= 0
+         Display userInput," is not a positive nonzero number"
+         input userInput
+End Function
+```
+
 Design an algorithm that prompts the user to enter a number in the range of 1 through 100 and validates the input.
+
+```
+//Declaration
+Declare Real num
+
+//Prompt User to Enter Number
+Display "Enter a number between 1 and 100."
+input num
+
+//Call on function for input validation
+Call inputValidation(num)
+
+//Input validation function
+Function String inputValidation(Real userInput)
+   if userInput >= 1 and userInput <= 100 then
+      Return userInput,"is a valid number"
+   Else
+      Return userInput," is not a valid number."
+End Function
+```
 
 Design an algorithm that prompts the user to enter “yes” or “no” and validates the input. (Use a case-insensitive comparison.)
 
+```
+//Declaration
+Declare string yes = 'yes'
+Declare string no = 'no'
+Declare string response
+
+//Call on function for input validation
+Call inputValidation(response)
+
+//Where the magic happens
+Function String inputValidation(response)
+   Display "Please type yes or no"
+   input response
+   if response == toLower(yes) or response == toLower(no) then
+      return "Valid response given."
+   else
+      return "Invalid response given."
+```
+
 Design an algorithm that prompts the user to enter a number that is greater than 99 and validates the input.
+
+```
+//Declaration
+Declare Real greaterThan99
+
+//Prompt User to Enter Number
+Display "Enter a positive nonzero number"
+input nonZero
+
+//Call on function for input validation
+Call inputValidation(nonZero)
+
+//Input validation function
+Function String inputValidation(Real userInput)
+   if userInput > 0 then
+      Return userInput,"is a positive number"
+   Else
+      Return userInput," is not a positive nonzero"
+End Function
+```
 
 Design an algorithm that prompts the user to enter a secret word. The secret word should be at least 8 characters long. Validate the input.
 
